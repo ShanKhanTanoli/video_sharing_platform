@@ -14,8 +14,10 @@
 
         <div class="login_form">
             <div class="hd-lg">
-                <img src="{{ asset('dashboard/images/logo.png') }}" alt="">
-                <span>Create an account</span>
+                <strong>
+                    {{ config('app.name', 'Laravel') }}
+                </strong>
+                <span class="mt-3">Create an account</span>
             </div>
             <!--hd-lg end-->
             <div class="user-account-pr">

@@ -7,7 +7,7 @@
                         <i class="icon-menu"></i>
                     </a>
                     <a href="{{ route('main') }}" title="" class="logo">
-                        <img src="{{ asset('dashboard/images/logo.png') }}" alt="">
+                        {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
                 <!--menu_logo end-->
