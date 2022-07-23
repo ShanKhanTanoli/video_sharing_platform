@@ -12,4 +12,9 @@ class Video extends Model
     protected $fillable = [
         'name','thumbnail','source','visibility','user_id','slug'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

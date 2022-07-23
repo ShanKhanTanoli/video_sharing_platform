@@ -16,6 +16,10 @@ use App\Http\Livewire\User\Dashboard\Settings\Password\Index as EditPassword;
 use App\Http\Livewire\User\Dashboard\Videos\Add\Index as AddVideo;
 /*End::Videos*/
 
+/*Begin::View Video*/
+use App\Http\Livewire\User\Dashboard\Videos\View\Index as ViewVideo;
+/*End::View Video*/
+
 /*Begin::Watch Video*/
 use App\Http\Livewire\Home\Videos\View\Index as WatchVideo;
 /*End::Watch Video*/
@@ -43,8 +47,13 @@ Route::middleware(['auth', 'UserMiddleware'])->prefix('User')->group(function ()
         ->name('UserWatchVideo');
     /*End::Watch Video*/
 
+    /*Begin::Watch Video*/
+    Route::get('Video/View/{slug}', ViewVideo::class)
+        ->name('UserViewVideo');
+    /*End::Watch Video*/
+
     /*Begin::Search Video*/
-    Route::get('Video/Search/{slug}', SearchVideo::class)
+    Route::get('Video/Search/{query}', SearchVideo::class)
         ->name('UserSearchVideo');
     /*End::Search Video*/
 

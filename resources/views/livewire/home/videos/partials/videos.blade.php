@@ -3,6 +3,7 @@
         <div class="container">
             <div class="vidz_sec">
                 <h3>Videos</h3>
+                @if($videos->count() > 0)
                 <div class="vidz_list">
                     <div class="row">
                         <!--Begin::Video-->
@@ -42,6 +43,11 @@
                     </div>
                 </div>
                 <!--vidz_list end-->
+                @else
+                <div class="alert alert-warning">
+                    <strong><i class="fas fa-info-circle"></i> Videos does not exist. </strong>
+                </div>
+                @endif
             </div>
             <!--vidz_videos end-->
         </div>

@@ -33,34 +33,35 @@
                     <!--vidz-prt end-->
                     <div class="videoo-list-ab">
                         <!--Begin::Other Videos-->
-                        @foreach ($videos as $video)
+                        @foreach ($videos as $video_list)
+                        @if($video_list->id !== $video->id)
                             <div class="videoo">
                                 <div class="vid_thumbainl">
-                                    <a href="{{ route('UserWatchVideo', $video->slug) }}" title="">
-                                        @if ($video->thumbnail)
-                                            <img src="{{ asset('dashboard/images/resources/' . $video->thumbnail) }}"
+                                    <a href="{{ route('UserWatchVideo', $video_list->slug) }}" title="">
+                                        @if ($video_list->thumbnail)
+                                            <img src="{{ asset('dashboard/images/resources/' . $video_list->thumbnail) }}"
                                                 alt="">
                                         @else
                                             <img src="{{ asset('images/placeholder.jpg') }}" alt="">
                                         @endif
-                                        <span class="vid-time">10:21</span>
                                     </a>
                                 </div>
                                 <!--vid_thumbnail end-->
                                 <div class="video_info">
                                     <h3>
-                                        <a href="{{ route('UserWatchVideo', $video->slug) }}">
-                                            @if (strlen($video->name) > 20)
-                                                {!! Str::substr($video->name, 0, 20) !!}
+                                        <a href="{{ route('UserWatchVideo', $video_list->slug) }}">
+                                            @if (strlen($video_list->name) > 20)
+                                                {!! Str::substr($video_list->name, 0, 20) !!}
                                             @else
-                                                {!! $video->name !!}
+                                                {!! $video_list->name !!}
                                             @endif
                                         </a>
                                     </h3>
                                     <span> Posted <small
-                                            class="posted_dt">{{ date('M d,Y', strtotime($video->created_at)) }}</small></span>
+                                            class="posted_dt">{{ date('M d,Y', strtotime($video_list->created_at)) }}</small></span>
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                         <!--videoo end-->
                     </div>

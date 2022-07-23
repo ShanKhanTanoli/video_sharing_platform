@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Setting;
+use App\Models\Video;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Business\BusinessDetail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -51,13 +50,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function settings()
+    public function videos()
     {
-        return $this->hasOne(Setting::class);
-    }
-
-    public function details()
-    {
-        return $this->hasOne(BusinessDetail::class);
+        return $this->hasMany(Video::class);
     }
 }
