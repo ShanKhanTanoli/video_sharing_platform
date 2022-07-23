@@ -15,7 +15,7 @@ class Index extends Component
         $videos = Video::where('visibility', 1)->latest()
             ->take($this->quantity)
             ->get();
-        return view('livewire.Home.videos.index')
+        return view('livewire.home.videos.index')
             ->with(['videos' => $videos])
             ->extends('layouts.dashboard')
             ->section('content');

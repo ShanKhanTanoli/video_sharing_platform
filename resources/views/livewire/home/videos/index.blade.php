@@ -1,19 +1,23 @@
 <div>
 
-<!--Begin::Header-->
+    <!--Begin::Alerts-->
+    @include('errors.alerts')
+    <!--End::Alerts-->
+
+    <!--Begin::Header-->
     @include('livewire.home.videos.partials.header')
-<!--End::Header-->
+    <!--End::Header-->
 
-<!--Begin::Side Menu-->
-@include('livewire.home.videos.partials.side-menu')
-<!--End::Side Menu-->
+    <!--Begin::Side Menu-->
+    @include('livewire.home.videos.partials.side-menu')
+    <!--End::Side Menu-->
 
-<!--Begin::Videos-->
-@include('livewire.home.videos.partials.videos')
-<!--End::Videos-->
+    <!--Begin::Videos-->
+    @include('livewire.home.videos.partials.videos')
+    <!--End::Videos-->
 
-<!--Begin::Footer-->
-@include('livewire.home.videos.partials.footer')
-<!--End::Footer-->
+    <!--Begin::Footer-->
+    @include('livewire.home.videos.partials.footer')
+    <!--End::Footer-->
 
 </div>

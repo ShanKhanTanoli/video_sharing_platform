@@ -8,13 +8,13 @@
                 <span>
                     <i class="icon-home"></i>
                 </span>
-                <a href="{{ route('UserVideos') }}" title="">Home</a>
+                <a href="{{ route('main') }}">Home</a>
             </li>
             <li>
                 <span>
                     <i class="icon-fire"></i>
                 </span>
-                <a href="{{ route('UserDashboard') }}" title="">Dashboard</a>
+                <a href="{{ route('UserDashboard') }}">Dashboard</a>
             </li>
         </ul>
     </div><!--sd_menu end-->

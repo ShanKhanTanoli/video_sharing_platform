@@ -11,9 +11,8 @@ class Index extends Component
 {
     public $name, $user_name, $email, $number, $address;
 
-    public function mount($lang = "en")
+    public function mount()
     {
-        App::setLocale($lang);
         $this->name = Auth::user()->name;
         $this->user_name = Auth::user()->user_name;
         $this->email = Auth::user()->email;
@@ -38,10 +37,10 @@ class Index extends Component
         ]);
         try {
             Auth::user()->update($validated);
-            session()->flash('success', trans('alerts.update'));
-            return redirect(route('UserEditProfile', App::getLocale()));
+            session()->flash('success', 'Updated successfully');
+            return redirect(route('UserEditProfile'));
         } catch (Exception $e) {
-            return session()->flash('error', trans('alerts.error'));
+            return session()->flash('error', 'Something went wrong');
         }
     }
 }

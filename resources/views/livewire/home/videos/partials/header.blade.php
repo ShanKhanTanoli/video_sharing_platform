@@ -12,8 +12,8 @@
                 </div>
                 <!--menu_logo end-->
                 <div class="search_form">
-                    <form>
-                        <input type="text" name="search" placeholder="Search Videos">
+                    <form wire:submit.prevent='Search()'>
+                        <input type="text" name="search" wire:model='search' placeholder="Search Videos">
                         <button type="submit">
                             <i class="icon-search"></i>
                         </button>
