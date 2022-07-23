@@ -16,10 +16,10 @@
                         <div class="vid-pr">
                             <video id="my-video" class="video-js" controls="controls" preload="auto" width="640"
                                 height="264"
-                                @if ($video->thumbnail) poster="{{ asset('dashboard/images/resources/' . $video->thumbnail) }}" @else poster="{{ asset('images/placeholder.jpg') }}" @endif
+                                @if ($video->thumbnail) poster="{{ asset(Storage::url($video->thumbnail)) }}" @else poster="{{ asset('images/placeholder.jpg') }}" @endif
                                 data-setup="{}">
-                                <source src="{{ asset('videos/' . $video->source) }}" type="video/mp4" />
-                                <source src="{{ asset('videos/' . $video->source) }}" type="video/webm" />
+                                <source src="{{ asset(Storage::url($video->source)) }}" type="video/mp4" />
+                                <source src="{{ asset(Storage::url($video->source)) }}" type="video/webm" />
                             </video>
                         </div>
                         <!--vid-pr end-->
@@ -48,7 +48,7 @@
                                     <div class="vid_thumbainl">
                                         <a href="{{ route('UserViewVideo', $video_list->slug) }}" title="">
                                             @if ($video_list->thumbnail)
-                                                <img src="{{ asset('dashboard/images/resources/' . $video_list->thumbnail) }}"
+                                                <img src="{{ asset(Storage::url($video_list->thumbnail)) }}"
                                                     alt="">
                                             @else
                                                 <img src="{{ asset('images/placeholder.jpg') }}" alt="">

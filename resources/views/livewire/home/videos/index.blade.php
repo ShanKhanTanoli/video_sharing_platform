@@ -16,8 +16,10 @@
     @include('livewire.home.videos.partials.videos')
     <!--End::Videos-->
 
+    @if($videos->count() > 0)
     <!--Begin::Footer-->
     @include('livewire.home.videos.partials.footer')
     <!--End::Footer-->
+    @endif
 
 </div>

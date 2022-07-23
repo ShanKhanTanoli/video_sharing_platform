@@ -51,7 +51,6 @@
                     </div>
                     <!--input-sec end-->
                 </form>
-                <a href="{{ route('forgot-password') }}" title="" class="fg_btn">Forgot password?</a>
             </div>
             <!--user-account end--->
             <div class="fr-ps">

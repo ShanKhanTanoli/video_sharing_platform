@@ -37,20 +37,6 @@ return new class extends Migration
 
             $table->timestamps();
         });
-
-        for ($user = 2; $user < 5; $user++) {
-
-            for ($video = 1; $video < mt_rand(20, 50); $video++) {
-                Video::create([
-                    'name' => 'Video' . $video,
-                    'thumbnail' => 'vide' . mt_rand(1,20) . '.png',
-                    'source' => 'video.mp4',
-                    'visibility' => mt_rand(0, 1),
-                    'user_id' => $user,
-                    'slug' => Str::random(10),
-                ]);
-            }
-        }
     }
 
     /**

@@ -18,11 +18,11 @@
                                                             <a href="{{ route('UserViewVideo', $video->slug) }}"
                                                                 title="">
                                                                 @if ($video->thumbnail)
-                                                                    <img src="{{ asset('dashboard/images/resources/' . $video->thumbnail) }}"
-                                                                        alt="">
+                                                                    <img src="{{ asset(Storage::url($video->thumbnail)) }}"
+                                                                        alt="{{ $video->name }}">
                                                                 @else
                                                                     <img src="{{ asset('images/placeholder.jpg') }}"
-                                                                        alt="">
+                                                                        alt="{{ $video->name }}">
                                                                 @endif
                                                             </a>
                                                         </div>

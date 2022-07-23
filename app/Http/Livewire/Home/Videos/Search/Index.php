@@ -13,6 +13,13 @@ class Index extends Component
 
     public $videos;
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo', $this->search);
+    }
+
     public function mount($query)
     {
         $videos = Video::where('name', 'LIKE', '%' . $query . '%')

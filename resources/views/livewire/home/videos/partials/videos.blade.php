@@ -13,7 +13,7 @@
                                     <div class="vid_thumbainl">
                                         <a href="{{ route('UserWatchVideo', $video->slug) }}" title="">
                                             @if ($video->thumbnail)
-                                                <img src="{{ asset('dashboard/images/resources/' . $video->thumbnail) }}"
+                                                <img src="{{ asset(Storage::url($video->thumbnail)) }}"
                                                     alt="">
                                             @else
                                                 <img src="{{ asset('images/placeholder.jpg') }}" alt="">
