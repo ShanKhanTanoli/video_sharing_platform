@@ -4,6 +4,7 @@
                             <h2 class="hd-op">Videos</h2>
                             <div class="clearfix"></div>
                         </div>
+                        @if($videos->count() > 0)
                         <!--latest-vid-option end-->
                         <div class="vidz_list">
                             <!--Begin::Videos-->
@@ -83,5 +84,11 @@
                         </div>
                         <!--vidz_list end-->
                         {{ $videos->links() }}
+                        @else
+                        <div class="alert alert-warning" role="alert">
+                          <i class="fas fa-info-circle"></i>
+                          <strong>Seems like you don't have any video.Add some videos.</strong>
+                        </div>
+                        @endif
                     </div>
                     <!--End::Latest Videos-->

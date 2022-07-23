@@ -10,6 +10,14 @@ class Index extends Component
 
     public $quantity = 8;
 
+    public $search;
+
+    public function Search()
+    {
+        $videos = Video::where('name', 'LIKE' . '%' . $this->search . '%')
+            ->get();
+    }
+
     public function render()
     {
         $videos = Video::where('visibility', 1)->latest()
@@ -25,6 +33,4 @@ class Index extends Component
     {
         $this->quantity += 4;
     }
-
-
 }

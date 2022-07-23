@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Helpers;
+
 use Illuminate\Support\Facades\Auth;
 
 class Redirect
@@ -11,7 +12,7 @@ class Redirect
             if ($user->role == "admin") {
                 return route('AdminDashboard');
             } elseif ($user->role == "user") {
-                return route('UserDashboard');
+                return route('main');
             } else return route('login');
         } else return route('login');
     }

@@ -1,8 +1,8 @@
 <div>
 
-        <!--Begin::Alerts-->
-        @include('errors.alerts')
-        <!--End::Alerts-->
+    <!--Begin::Alerts-->
+    @include('errors.alerts')
+    <!--End::Alerts-->
 
     <!--Begin::Header-->
     @include('livewire.home.videos.partials.header')
@@ -29,7 +29,7 @@
                                 <div class="ch-pswd">
                                     <input id="password" type="password" wire:model.defer="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        autocomplete="password" placeholder="Password">
+                                        autocomplete="password" placeholder="New Password">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -38,9 +38,11 @@
                                 </div>
                                 <!--ch-pswd end-->
                                 <div class="ch-pswd">
-                                    <input id="password_confirmation" type="password" wire:model.defer="password_confirmation"
-                                        class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation"
-                                        autocomplete="password_confirmation" placeholder="Confirm New Password">
+                                    <input id="password_confirmation" type="password"
+                                        wire:model.defer="password_confirmation"
+                                        class="form-control @error('password_confirmation') is-invalid @enderror"
+                                        name="password_confirmation" autocomplete="password_confirmation"
+                                        placeholder="Confirm New Password">
                                     @error('password_confirmation')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
