@@ -11,6 +11,13 @@ class Index extends Component
 {
     public $name, $user_name, $email, $number, $address;
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo',$this->search);
+    }
+
     public function mount()
     {
         $this->name = Auth::user()->name;

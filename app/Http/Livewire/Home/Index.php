@@ -14,8 +14,7 @@ class Index extends Component
 
     public function Search()
     {
-        $videos = Video::where('name', 'LIKE' . '%' . $this->search . '%')
-            ->get();
+        return redirect()->route('UserSearchVideo',$this->search);
     }
 
     public function render()

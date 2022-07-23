@@ -11,6 +11,13 @@ class Index extends Component
 {
     public $password, $password_confirmation;
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo',$this->search);
+    }
+
     public function render()
     {
         return view('livewire.user.dashboard.settings.password.index')

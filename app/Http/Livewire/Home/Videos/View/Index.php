@@ -11,6 +11,13 @@ class Index extends Component
 
     public $quantity = 3;
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo',$this->search);
+    }
+
     public function mount($slug)
     {
         if ($video = Video::where('slug', $slug)->where('visibility', 1)->first()) {

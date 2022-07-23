@@ -11,6 +11,13 @@ class Index extends Component
 
     public $video;
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo',$this->search);
+    }
+
     public function render()
     {
         return view('livewire.user.dashboard.videos.add.index')

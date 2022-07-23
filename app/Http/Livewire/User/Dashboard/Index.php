@@ -13,6 +13,13 @@ class Index extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    public $search;
+
+    public function Search()
+    {
+        return redirect()->route('UserSearchVideo',$this->search);
+    }
+
     public function render()
     {
         $videos = Video::where('user_id', Auth::user()->id)->latest()->paginate(4);
